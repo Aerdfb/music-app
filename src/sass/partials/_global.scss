@@ -1,3 +1,6 @@
-.body {
-    font-family: $font-family;
+@import '_settings.scss';
+
+body {
+  font-family: $font-family !important;
+  background-color: $dark-color !important;
 }
