@@ -38,15 +38,34 @@
   padding: 70px 0;
 
   .nav-link{
-    color: $text-color;
+    color: $text-subtittle-color;
     font-size: 20px;
     font-weight: $font-semibold;
+  }
+
+  .active{
+    color: $text-color;
+  }
+
+  a:hover {
+    color: $text-color;
   }
 }
 
 #nav {
   // width: 500px;
   max-width: 500px;
+}
+
+#pages {
+  >* {
+    
+    display: none;
+  }
+
+  >.active {
+    display: block;
+  }
 }
 
 /* Music section */
@@ -65,6 +84,7 @@
   }
 
 }
+
 .progress__pin {
   background-color: $main-color !important;
 }

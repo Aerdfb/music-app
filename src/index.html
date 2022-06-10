@@ -24,29 +24,46 @@
     <div class="container" id="nav">
         <ul class="nav justify-content-center d-flex justify-content-between">
             <li class="nav-item">
-                <a class="nav-link" href="#">HOME</a>
+                <a class="nav-link" href="#home">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">SEARCH</a>
+                <a class="nav-link" href="#search">SEARCH</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">DISCOVER</a>
+                <a class="nav-link" href="#discover">DISCOVER</a>
             </li>
         </ul>
     </div>
+    <div id="pages">
+        <div id="home">
+            <div class="container" id="music-list">
 
-    <div class="container" id="music-list">
+            </div>
+            <div class="container-fluid position-relative" id="footer">
+                <h1 class="text-center position-absolute">SUBSCRIBE<span> NOW</span></h1>
+                <button type="button" class="position-absolute">JOIN NOW</button>
+                <img alt="" class="position-absolute" src="/images/artist.jpg">
+                <h2 class="position-absolute">Dean</h2>
+                <h2 class="position-absolute" id="dual-color">Hen<span>son</span></h2>
+                <h3 class="position-absolute">NEW ALBUM</h3>
+                <p class="position-absolute">Avaliable only for subscribers</p>
+            </div>
+        </div>
+        <div id="search">
+            <div class="container">
+                <h2>search</h2>
+                <span>name</span>
+                <input type="text" id="searchInput">
+                <button type="button" class="searchButton">search</button>
+                <div class="searchResult">
 
-    </div>
-
-    <div class="container-fluid position-relative" id="footer">
-        <h1 class="text-center position-absolute">SUBSCRIBE<span> NOW</span></h1>
-        <button type="button" class="position-absolute">JOIN NOW</button>
-        <img alt="" class="position-absolute" src="/images/artist.jpg">
-        <h2 class="position-absolute">Dean</h2>
-        <h2 class="position-absolute" id="dual-color">Hen<span>son</span></h2>
-        <h3 class="position-absolute">NEW ALBUM</h3>
-        <p class="position-absolute">Avaliable only for subscribers</p>
+                </div>
+            </div>
+        </div>
+        <div id="discover">
+            <div class="container" id="discover-song">
+            </div>
+        </div>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
