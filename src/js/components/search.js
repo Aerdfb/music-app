@@ -1,4 +1,5 @@
-import { select } from '../settings.js';
+import { select, templates } from '../settings.js';
+import { utils } from '../utils.js';
 import songs from './music.js';
 
 class Search{
@@ -10,12 +11,13 @@ class Search{
     thisWdiget.getElements();
     thisWdiget.initActions();
   }
-
+ 
   getElements(){
     const thisWdiget = this;
     thisWdiget.dom.input = document.getElementById(select.search.input);
     thisWdiget.dom.button = document.querySelector(select.search.button);
     thisWdiget.dom.wrapper = document.querySelector(select.containerOf.searchResult);
+    thisWdiget.dom.numberOfSongWrapper = document.querySelector(select.containerOf.numberofSongs);
   }
 
   initActions(){
@@ -24,7 +26,7 @@ class Search{
 
     thisWdiget.dom.button.addEventListener('click', function(event){
       event.preventDefault();
-      thisWdiget.clearResults()
+      thisWdiget.clearResults();
       thisWdiget.initSearch();
     });
   }
@@ -32,13 +34,22 @@ class Search{
   initSearch(){
     const thisWdiget = this;
     thisWdiget.value = document.getElementById(select.search.input).value;
-    console.log(thisWdiget.value);
-    console.log(thisWdiget.data.songs);
+    
+    // console.log(thisWdiget.value);
+    // console.log(thisWdiget.data.songs);
+    let valueRegEx = new RegExp(thisWdiget.value, 'i');
+    console.log(valueRegEx);
+
+    let numberOfSong = 0;
+
     for (let song in thisWdiget.data.songs){
       // console.log(song);
-      let songName = thisWdiget.data.songs[song].title;
+      let songName = thisWdiget.data.songs[song].filename;
 
-      if(songName.includes(thisWdiget.value)){
+      const searchAmount = songName.search(valueRegEx);
+      
+      if(searchAmount != -1){
+        numberOfSong++;
         console.log(thisWdiget.value);
         new songs(thisWdiget.data.songs[song], thisWdiget.dom.wrapper);
         
@@ -48,9 +59,18 @@ class Search{
           stopOtherOnPlay: true,
           enableKeystrokes: true,
         });
-      } else
-        console.log('nie znaleziono');
+      }
     }
+
+    thisWdiget.counter = {};
+
+    thisWdiget.counter.number = numberOfSong;
+
+    const generatedHTML = templates.searchWidget(thisWdiget.counter);
+    thisWdiget.element = utils.createDOMFromHTML(generatedHTML);
+    
+    thisWdiget.dom.numberOfSongWrapper.appendChild(thisWdiget.element);
+    console.log(numberOfSong);
 
   }
 
@@ -58,6 +78,7 @@ class Search{
     const thisWdiget = this;
 
     thisWdiget.dom.wrapper.innerHTML = '';
+    thisWdiget.dom.numberOfSongWrapper.innerHTML = '';
   }
 }
 

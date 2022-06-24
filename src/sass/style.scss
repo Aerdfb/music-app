@@ -93,6 +93,52 @@
   color: $text-subtittle-color;
 }
 
+/* Search */
+
+.search-wrapper {
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: $text-color;
+    text-transform: uppercase;
+  }
+
+  span {
+    color: $text-subtittle-color;
+    font-size: 1.75rem;
+    text-transform: capitalize;
+  }
+
+  input {
+    width: 300px;
+    min-width: 250px;
+    height: 45px;
+    box-shadow: 0 4px 16px 0 rgb(0 0 0 / 7%);
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 4px;
+    margin: 30px 15px;
+
+  }
+
+  button {
+    height: 45px;
+    box-shadow: 0 4px 16px 0 rgb(0 0 0 / 7%);
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 4px;
+    background-color: $main-color;
+    color: $text-color;
+    border: none;
+  }
+}
+
+.numberOfSongs {
+  color: $text-color;
+  margin-bottom: 60px;
+}
+
 /* Footer */
 
 

@@ -50,11 +50,14 @@
             </div>
         </div>
         <div id="search">
-            <div class="container">
+            <div class="container search-wrapper">
                 <h2>search</h2>
                 <span>name</span>
                 <input type="text" id="searchInput">
                 <button type="button" class="searchButton">search</button>
+                <div class="numberOfSongs">
+
+                </div>
                 <div class="searchResult">
 
                 </div>
@@ -86,6 +89,13 @@
                 <div class="categories">Categories: {{categories}}</div>
                 <div class="ranking">{{ranking}} in the ranking</div>
             </div>
+        </div>
+    </script>
+    <script id="template-search-widget" type="text/x-handelbars-template">
+        <div class="container" id="foundSongs">
+            <div class="amountSong">
+                <h3>We have found {{number}} songs</h3>
+            </div>    
         </div>
     </script>
 </body>

@@ -72,27 +72,6 @@ const app = {
 
   },
 
-  initMusic(){
-    const thisApp = this;
-
-    const homeWrapper = document.querySelector(select.containerOf.musicWrapper);
-    // console.log(homeWrapper);
-
-    for(let song in thisApp.data.songs){
-    //   console.log(song);
-    //   console.log(thisApp.data.songs);
-      new songs(thisApp.data.songs[song], homeWrapper);
-      console.log ('działa');
-    }
-    // eslint-disable-next-line no-undef
-    GreenAudioPlayer.init({
-      selector: '#music-wrapper .gap',
-      stopOtherOnPlay: true,
-      enableKeystrokes: true,
-    });
-
-  },
-
   initData: function(){
     const thisApp = this;
 
@@ -113,6 +92,26 @@ const app = {
         thisApp.initDiscovery();
         thisApp.initSearchWidget();
       });
+  },
+
+  initMusic(){
+    const thisApp = this;
+
+    const homeWrapper = document.querySelector(select.containerOf.musicWrapper);
+    // console.log(homeWrapper);
+
+    for(let song in thisApp.data.songs){
+      console.log(song);
+      // console.log(thisApp.data.songs);
+      new songs(thisApp.data.songs[song], homeWrapper);
+    }
+    // eslint-disable-next-line no-undef
+    GreenAudioPlayer.init({
+      selector: '#music-wrapper .gap',
+      stopOthersOnPlay: true,
+      enableKeystrokes: true,
+    });
+
   },
 
   initDiscovery: function(){
