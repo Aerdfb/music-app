@@ -6,7 +6,7 @@ export const select = {
   containerOf: {
     musicWrapper: '#music-list',
     pages: '#pages',
-    discover: '#discover-song',
+    discover: 'discover-song',
     searchResult: '.searchResult',
     numberofSongs: '.numberOfSongs'
 

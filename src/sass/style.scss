@@ -134,6 +134,13 @@
   }
 }
 
+#music-wrapper span {
+  color: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  
+}
+
 .numberOfSongs {
   color: $text-color;
   margin-bottom: 60px;
@@ -220,4 +227,104 @@
     font-weight: $font-semibold;
     letter-spacing: 5px;
   }
+}
+
+@media (max-width: 576px) { 
+ 
+  .jumbotron {
+    
+    h1{
+      font-size: 2em;
+      margin-bottom: 50px;
+    }
+
+    h3 {
+      font-size: 1.5em;
+    }
+  }
+
+  .green-audio-player {
+    max-width: 340px;
+  }
+
+  #footer {
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      top: 40%;
+      left: 22%;
+    }
+
+    h3 { 
+      top: 75%;
+      left: 22%;
+    }
+
+    p {
+      top: 82%;
+      left: 0%;
+      text-align: center;
+    }
+
+    #dual-color {
+      top: 50%;
+      left: 15%;
+    }
+
+    img {
+      top: 100px;
+      left: 25px;
+    }
+
+    button {
+      z-index: 2;
+      left: 20%;
+      top: 60%;
+    }
+  }
+
+}
+
+@media (min-width: 768px) { 
+  .jumbotron {
+    h1{ 
+      font-size: 9em;
+    }
+
+  }
+  .green-audio-player {
+    width: 400px;
+  }  
+
+  #footer {
+    h2 {
+      top: 40%;
+      left: 30%;
+    }
+    h3 {
+      left: 58%;
+      top: 72%;
+    }
+    p {
+      top: 76%;
+      left: 58%;
+    }
+    #dual-color {
+      top: 47%;
+      left: 35%;
+    }
+    button {
+      left: 30%;
+      top: 55%;
+    }
+    img {
+      top: 35%;
+      left: 58%;
+      height: 35vh;
+    }
+  }
+  
+
 }

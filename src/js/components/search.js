@@ -17,6 +17,7 @@ class Search{
     thisWdiget.dom.input = document.getElementById(select.search.input);
     thisWdiget.dom.button = document.querySelector(select.search.button);
     thisWdiget.dom.wrapper = document.querySelector(select.containerOf.searchResult);
+    console.log(thisWdiget.dom.wrapper);
     thisWdiget.dom.numberOfSongWrapper = document.querySelector(select.containerOf.numberofSongs);
   }
 
@@ -47,24 +48,30 @@ class Search{
       let songName = thisWdiget.data.songs[song].filename;
 
       const searchAmount = songName.search(valueRegEx);
+      console.log(searchAmount);
       
       if(searchAmount != -1){
         numberOfSong++;
         console.log(thisWdiget.value);
         new songs(thisWdiget.data.songs[song], thisWdiget.dom.wrapper);
-        
-        // eslint-disable-next-line no-undef
-        GreenAudioPlayer.init({
-          selector: '#music-wrapper .gap',
-          stopOtherOnPlay: true,
-          enableKeystrokes: true,
-        });
-      }
-    }
+      }}  
+    // eslint-disable-next-line no-undef
+    GreenAudioPlayer.init({
+      selector: '.searchResult .gap',
+      stopOtherOnPlay: true,
+      enableKeystrokes: true,
+    });
 
     thisWdiget.counter = {};
 
-    thisWdiget.counter.number = numberOfSong;
+    if(numberOfSong == 1){
+      thisWdiget.counter.number = numberOfSong.toString() + ' song';
+    }else {
+      thisWdiget.counter.number = numberOfSong.toString() + ' songs';
+    }
+
+
+    // thisWdiget.counter.number = numberOfSong;
 
     const generatedHTML = templates.searchWidget(thisWdiget.counter);
     thisWdiget.element = utils.createDOMFromHTML(generatedHTML);

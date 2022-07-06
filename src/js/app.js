@@ -86,7 +86,7 @@ const app = {
       })
       .then(function(parsedResponse){
         thisApp.data.songs = parsedResponse;
-        // console.log(parsedResponse);
+        console.log(parsedResponse);
 
         thisApp.initMusic();
         thisApp.initDiscovery();
@@ -129,6 +129,7 @@ const app = {
 
     thisApp.initPages();
     thisApp.initData();
+
   }
 };
 
