@@ -230,10 +230,8 @@
 }
 
 @media (max-width: 576px) { 
- 
   .jumbotron {
-    
-    h1{
+    h1 {
       font-size: 2em;
       margin-bottom: 50px;
     }
@@ -241,6 +239,7 @@
     h3 {
       font-size: 1.5em;
     }
+  
   }
 
   .green-audio-player {
@@ -292,8 +291,8 @@
     h1{ 
       font-size: 9em;
     }
-
   }
+  
   .green-audio-player {
     width: 400px;
   }  
@@ -303,28 +302,31 @@
       top: 40%;
       left: 30%;
     }
+
     h3 {
       left: 58%;
       top: 72%;
     }
+
     p {
       top: 76%;
       left: 58%;
     }
+
     #dual-color {
       top: 47%;
       left: 35%;
     }
+
     button {
       left: 30%;
       top: 55%;
     }
+
     img {
       top: 35%;
       left: 58%;
       height: 35vh;
     }
   }
-  
-
 }
